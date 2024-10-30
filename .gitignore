@@ -1,0 +1,11 @@
+data/
+figures/
+__pycache__/
+**.code-workspace*
+**.DS_store**
+**.pyc**
+**.sh**
+**.e**
+**.o**
+**.png**
+**.mp4**
