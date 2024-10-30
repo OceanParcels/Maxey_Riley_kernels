@@ -343,7 +343,7 @@ def MRSMAdvectionRK4_2D(particle, fieldset, time):
     DvDt1 = dvdt1 + uf1 * dvdx1 + vf1 * dvdy1
 
     # coriolis force
-    f1 = 0  # 2 * fieldset.Omega_earth * math.sin(particle.lat * math.pi / 180)
+    f1 = 2 * fieldset.Omega_earth * math.sin(particle.lat * math.pi / 180)
     ucor1 = -vf1 * f1
     vcor1 = uf1 * f1
 
@@ -354,6 +354,7 @@ def MRSMAdvectionRK4_2D(particle, fieldset, time):
     lon1 = particle.lon + 0.5 * u1 * particle.dt
     lat1 = particle.lat + 0.5 * v1 * particle.dt
     time1 = time + 0.5 * particle.dt
+
     # RK4 STEP 2
     # fluid field velocity at location of particle
     (uf2, vf2) = fieldset.UV[time1, particle.depth, lat1, lon1]
@@ -386,7 +387,7 @@ def MRSMAdvectionRK4_2D(particle, fieldset, time):
     DvDt2 = dvdt2 + uf2 * dvdx2 + vf2 * dvdy2
 
     # coriolis force
-    f2 = 0  # 2 * fieldset.Omega_earth*math.sin(lat1 * math.pi / 180)
+    f2 = 2 * fieldset.Omega_earth*math.sin(lat1 * math.pi / 180)
     ucor2 = -vf2 * f2
     vcor2 = uf2 * f2
 
@@ -429,7 +430,7 @@ def MRSMAdvectionRK4_2D(particle, fieldset, time):
     DvDt3 = dvdt3 + uf3 * dvdx3 + vf3 * dvdy3
 
     # coriolis force
-    f3 = 0  # 2 * fieldset.Omega_earth*math.sin(lat2 * math.pi / 180)
+    f3 = 2 * fieldset.Omega_earth*math.sin(lat2 * math.pi / 180)
     ucor3 = -vf3 * f3
     vcor3 = uf3 * f3
 
@@ -472,7 +473,7 @@ def MRSMAdvectionRK4_2D(particle, fieldset, time):
     DvDt4 = dvdt4 + uf4 * dvdx4 + vf4 * dvdy4
 
     # coriolis force
-    f4 = 0  # 2 * fieldset.Omega_earth * math.sin(lat3 * math.pi / 180)
+    f4 = 2 * fieldset.Omega_earth * math.sin(lat3 * math.pi / 180)
     ucor4 = -vf4 * f4
     vcor4 = uf4 * f4
 
@@ -571,7 +572,7 @@ def MRAdvectionRK4_3D(particle, fieldset, time):
     DwDt1 = dwdt1 + uf1 * dwdx1 + vf1 * dwdy1 + wf1 * dwdz1
 
     # coriolis force
-    f1 = 0  # 2 * fieldset.Omega_earth * math.sin(particle.lat * math.pi / 180)
+    f1 = 2 * fieldset.Omega_earth * math.sin(particle.lat * math.pi / 180)
     ucor1 = -vf1 * f1
     vcor1 = uf1 * f1
 
@@ -637,7 +638,7 @@ def MRAdvectionRK4_3D(particle, fieldset, time):
     DwDt2 = dwdt2 + uf2 * dwdx2 + vf2 * dwdy2 + wf2 * dwdz2
 
     # coriolis force
-    f2 = 0  # 2 * fieldset.Omega_earth * math.sin(lat1 * math.pi / 180)
+    f2 = 2 * fieldset.Omega_earth * math.sin(lat1 * math.pi / 180)
     ucor2 = -vf2 * f2
     vcor2 = uf2 * f2
 
@@ -702,7 +703,7 @@ def MRAdvectionRK4_3D(particle, fieldset, time):
     DwDt3 = dwdt3 + uf3 * dwdx3 + vf3 * dwdy3 + wf3 * dwdz3
 
     # coriolis force
-    f3 = 0  # 2 * fieldset.Omega_earth * math.sin(lat2 * math.pi / 180)
+    f3 = 2 * fieldset.Omega_earth * math.sin(lat2 * math.pi / 180)
     ucor3 = -vf3 * f3
     vcor3 = uf3 * f3
 
@@ -767,7 +768,7 @@ def MRAdvectionRK4_3D(particle, fieldset, time):
     DwDt4 = dwdt4 + uf4 * dwdx4 + vf4 * dwdy4 + wf4 * dwdz4
 
     # coriolis force
-    f4 = 0  # 2 * fieldset.Omega_earth * math.sin(lat3 * math.pi / 180)
+    f4 = 2 * fieldset.Omega_earth * math.sin(lat3 * math.pi / 180)
     ucor4 = -vf4 * f4
     vcor4 = uf4 * f4
 
@@ -873,7 +874,7 @@ def MRSMAdvectionRK4_3D(particle, fieldset, time):
     DwDt1 = dwdt1 + uf1 * dwdx1 + vf1 * dwdy1 + wf1 * dwdz1
 
     # coriolis force
-    f1 = 0  # 2 * fieldset.Omega_earth * math.sin(particle.lat * math.pi / 180)
+    f1 = 2 * fieldset.Omega_earth * math.sin(particle.lat * math.pi / 180)
     ucor1 = -vf1 * f1
     vcor1 = uf1 * f1
 
@@ -928,7 +929,7 @@ def MRSMAdvectionRK4_3D(particle, fieldset, time):
     DwDt2 = dwdt2 + uf2 * dwdx2 + vf2 * dwdy2 + wf2 + dwdz2
 
     # coriolis force
-    f2 = 0  # 2 * fieldset.Omega_earth*math.sin(lat1 * math.pi / 180)
+    f2 = 2 * fieldset.Omega_earth*math.sin(lat1 * math.pi / 180)
     ucor2 = -vf2 * f2
     vcor2 = uf2 * f2
 
@@ -983,7 +984,7 @@ def MRSMAdvectionRK4_3D(particle, fieldset, time):
     DwDt3 = dwdt3 + uf3 * dwdx3 + vf3 * dwdy3 + wf3 + dwdz3
 
     # coriolis force
-    f3 = 0  # 2 * fieldset.Omega_earth*math.sin(lat2 * math.pi / 180)
+    f3 = 2 * fieldset.Omega_earth*math.sin(lat2 * math.pi / 180)
     ucor3 = -vf3 * f3
     vcor3 = uf3 * f3
 
@@ -1038,7 +1039,7 @@ def MRSMAdvectionRK4_3D(particle, fieldset, time):
     DwDt4 = dwdt4 + uf4 * dwdx4 + vf4 * dwdy4 + wf4 * dwdz4
 
     # coriolis force
-    f4 = 0   # 2 * fieldset.Omega_earth * math.sin(lat3 * math.pi / 180)
+    f4 = 2 * fieldset.Omega_earth * math.sin(lat3 * math.pi / 180)
     ucor4 = -vf4 * f4
     vcor4 = uf4 * f4
 
