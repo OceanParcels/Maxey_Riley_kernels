@@ -263,7 +263,7 @@ def MRAdvectionRK4_2D(particle, fieldset, time):
     DvDt4 = dvdt4 + uf4 * dvdx4 + vf4 * dvdy4
 
     # coriolis force
-    f4 = 0  # 2 * fieldset.Omega_earth * math.sin(lat3 * math.pi / 180)
+    f4 = 2 * fieldset.Omega_earth * math.sin(lat3 * math.pi / 180)
     ucor4 = -vf4 * f4
     vcor4 = uf4 * f4
 
