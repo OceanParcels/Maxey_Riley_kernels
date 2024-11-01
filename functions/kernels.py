@@ -44,6 +44,15 @@ def InitializeParticles3D(particle, fieldset, time):
     particle.vp = v
     particle.wp = w + w0
 
+
+#delete particles that go outsite domain
+def deleteParticle(particle, fieldset, time):
+    """ Kernel for deleting particles if they throw an error other than through
+    the surface
+    """
+    if particle.state >= 50:
+        particle.delete()
+
 def MRAdvectionRK4_2D(particle, fieldset, time):
     """
     Advection of particles using Maxey-Riley equation in 2D without Basset
